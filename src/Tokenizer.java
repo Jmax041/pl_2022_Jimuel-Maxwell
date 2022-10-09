@@ -19,6 +19,7 @@ public class Tokenizer {
 
         for(int a=0;a<token.length;a++){
 
+            //determines and prints if input is a datatype
             for(int b=0;b<datatype.length;b++){
                 if(token[a].equals(datatype[b])){
                     System.out.print("<datatype>");
@@ -26,6 +27,7 @@ public class Tokenizer {
                 }
             }
 
+            //determines and prints if input is a value
             for(int b=0;b<value.length;b++){
                 if(token[a].contains(value[b])){
                     System.out.print("<value>");
@@ -33,6 +35,7 @@ public class Tokenizer {
                 }
             }
 
+            //determines and prints if input is an identifier
             if(!token[a].equals("String") && !token[a].equals("int") && !token[a].equals("double")
                     && !token[a].equals("char") && !token[a].contains("0")  && !token[a].contains("1")
                     && !token[a].contains("2") && !token[a].contains("3") && !token[a].contains("4")
@@ -42,14 +45,15 @@ public class Tokenizer {
                 System.out.print("<identifier>");
             }
 
+            //determines and prints if input is an assignment operator
             if(token[a].equals("=")){
                 System.out.print("<assignment operator>");
             }
 
+            //determines and prints if input is a delimiter
             if(token[a].endsWith(";")){
                 System.out.print("<delimiter>");
             }
-
         }
     }
 }
