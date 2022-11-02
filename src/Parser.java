@@ -19,6 +19,20 @@ public class Parser {
         //array that stores comparing result
         String[] checking = new String[5];
 
+        //if number of token is below 5, print error
+        if(token.length < 5){
+
+            System.out.println("Syntax Error!");
+            System.exit(0);
+        }
+
+        //if number of token is above 5, print error
+        else if(token.length > 5){
+
+            System.out.println("Syntax Error!");
+            System.exit(0);
+        }
+
         //compare input tokens to correct syntax order
         for(int a=0;a<token.length;a++){
             if(token[a].contentEquals(correct[a])){
